@@ -1,0 +1,129 @@
+:root{
+    --background-color: #fff;
+    --background-light: #fff;
+    --shadow-color: rgba(0,0,0,0.2);
+    --primary-color: rgb(255, 0, 86);
+    --text-color: #0A0A0A;
+    --text-light: #575757;
+    --font-size: 16px;
+    --animation-speed: 1;
+}
+
+@function getAnimationDuration($duration: number) {
+    @return calc($duration * var(--animation-speed));
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: var(--font-size);
+    font-family: 'Roboto', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+img{
+    object-fit: cover;
+}
+
+.btn{
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: .75em 1em;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px var(--shadow-color);
+    &:hover{
+        box-shadow: 0 1px 3px var(--shadow-color);
+    }
+}
+
+.custom-image{
+    background-color: red;
+    height: 0;
+    width: 100%;
+    position: relative;
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@import "partials/navbar.scss";
+
+.section{
+    display: flex;
+    align-items: center;
+    margin-bottom: 3vw;
+    .title{
+        color: var(--text-color);
+        font-size: 2.5em;
+        margin-bottom: .25em;
+        font-weight: 900;
+    }
+    .info{
+        color: var(--text-light);
+        font-size: 1em;
+        letter-spacing: 1px;
+        line-height: 1.3;
+        margin-bottom: 1.25em;
+
+    }
+    .col{
+        width: 50%;
+    }
+}
+
+@import "partials/hero-section.scss";
+@import "partials/improve-section.scss";
+
+
+.section.quote{
+    display: block;
+    .qoute-text{
+        font-size: 1.2em;
+        line-height: 1.3;
+        color: var(--text-color);
+        svg{
+            color: var(--primary-color);
+            font-size: 1.5em;
+            margin-right: .5em;
+        }
+    }
+    .qoute-auther{
+        color: var(--text-light);
+        text-align: right;
+        margin-top: 1em;
+    }
+}
+
+
+.main{
+    padding-block: 3vw;
+}
+.container{
+    padding-inline: 12vw;
+}
+@import "partials/animations.scss";
+@media screen and (max-width: 768px){
+    .navbar{
+        .nav-links{
+            display: none;
+        }
+        .sidebar-btn{
+            display: block;
+        }
+    }
+}

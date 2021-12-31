@@ -22,6 +22,7 @@
 body{
     font-size: var(--font-size);
     font-family: 'Roboto', sans-serif;
+    padding-top: 55px;
 }
 a{
     text-decoration: none;
@@ -65,6 +66,7 @@ img{
 
 .section{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     margin-bottom: 3vw;
     .title{
@@ -88,35 +90,49 @@ img{
 
 @import "partials/hero-section.scss";
 @import "partials/improve-section.scss";
+@import "partials/quote-section.scss";
+@import "partials/chiefs-section.scss";
 
-
-.section.quote{
-    display: block;
-    .qoute-text{
-        font-size: 1.2em;
-        line-height: 1.3;
-        color: var(--text-color);
-        svg{
-            color: var(--primary-color);
-            font-size: 1.5em;
-            margin-right: .5em;
+.footer{
+    background-color: #0f0f0f;
+    color: #fff;
+    padding-block: 3em;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: 1em;
+    .footer-section{
+        p{
+            opacity: .9;
+            margin-bottom: .5em;
+        }
+        p.title{
+            opacity: 1;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 1em;
         }
     }
-    .qoute-auther{
-        color: var(--text-light);
-        text-align: right;
-        margin-top: 1em;
-    }
 }
-
 
 .main{
     padding-block: 3vw;
 }
 .container{
-    padding-inline: 12vw;
+    padding-inline: 25vw;
 }
+
 @import "partials/animations.scss";
+
+@media screen and (max-width: 1280px){
+    .container{
+        padding-inline: 18vw;
+    }
+}
+@media screen and (max-width: 1050px){
+    .container{
+        padding-inline: 12vw;
+    }
+}
 @media screen and (max-width: 768px){
     .navbar{
         .nav-links{
@@ -125,5 +141,42 @@ img{
         .sidebar-btn{
             display: block;
         }
+    }
+    .section{
+        .col{
+            width: 100%;
+            padding: 0 !important;
+            text-align: center;
+            margin-bottom: 2em;
+        }
+    }
+    .skill-item{
+        display: inline-block;
+        margin: .75em;
+    }
+    .section.improve-skills .btn{
+        display: block;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    .chief-card{
+        box-shadow: 0 5px 10px var(--shadow-color);
+    }
+    .container{
+        padding-inline: 6vw;
+    }
+    .footer{
+        grid-template-columns: repeat(4, 1fr);
+        .footer-section:nth-child(1){
+            grid-column: span 4;
+        }
+        .footer-section:nth-child(2), .footer-section:nth-child(3){
+            grid-column: span 2;
+        }
+    }
+}
+@media screen and (max-width: 480px){
+    .container{
+        padding-inline: 3vw;
     }
 }

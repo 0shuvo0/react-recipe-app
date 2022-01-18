@@ -138,7 +138,7 @@ export default function Settings(){
                 <h2>Preferred color</h2>
                 <div className="options-container">
                     { primaryColors.map((color, index) => (
-                        <div className="option light" style={{backgroundColor: color}} onClick={() => changeColor(index)}>
+                        <div key={index} className="option light" style={{backgroundColor: color}} onClick={() => changeColor(index)}>
                             { primaryColor === index && (
                                 <div className="check">
                                     <FontAwesomeIcon icon={faCheck} />
@@ -152,7 +152,7 @@ export default function Settings(){
                 <h2>Font size</h2>
                 <div className="options-container">
                     { fontSizes.map((size, index) => (
-                        <button className="btn" onClick={() => changeFontSize(index)}>
+                        <button key={index} className="btn" onClick={() => changeFontSize(index)}>
                             {size.title}
                             { fontSize === index && <span><FontAwesomeIcon icon={faCheck} /></span> }
                         </button>
@@ -163,7 +163,7 @@ export default function Settings(){
                 <h2>Animation speed</h2>
                 <div className="options-container">
                     { animationSpeeds.map((speed, index) => (
-                        <button className="btn" onClick={() => changeAnimationSpeed(index)}>
+                        <button key={index} className="btn" onClick={() => changeAnimationSpeed(index)}>
                             {speed.title}
                             { animationSpeed === index && <span><FontAwesomeIcon icon={faCheck} /></span> }
                         </button>

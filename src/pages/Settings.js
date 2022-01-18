@@ -41,7 +41,7 @@ export default function Settings(){
 
     function changeTheme(i){
         const _theme = {...themes[i]}
-        setTheme(i == 0 ? "light" : "dark")
+        setTheme(i === 0 ? "light" : "dark")
         let _settings = {...settings}
         for(let key in _theme){
             _settings[key] = _theme[key]
